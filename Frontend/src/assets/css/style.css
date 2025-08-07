@@ -1,0 +1,385 @@
+:root {
+    --primary-color: #7c4dff;
+    --secondary-color: #b388ff;
+    --accent-color: #18ffff;
+    --success-color: #00e676;
+    --text-color: white;
+    --light-bg: #0f0f1a;
+    --white: #1a1a2e;
+    --shadow: 0 4px 12px rgba(124, 77, 255, 0.2);
+    --border-radius: 12px;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f0f1a, #1a1a2e);
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: url('https://www.transparenttextures.com/patterns/stardust.png');
+    opacity: 1;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Theme Toggle Button Styles */
+.theme-toggle-btn {
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1050;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    padding: 0.6rem 0.75rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* === Light Theme Base === */
+
+
+/* === Form Container === */
+body.light-theme .form-container {
+    background-color: #f6f0ff; /* Light purple background */
+    color: #333;
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(126, 87, 194, 0.15);
+    transition: background-color 0.3s ease;
+    /* border-radius: 8px; */
+}
+
+/* === Inputs === */
+body.light-theme .form-control {
+    background-color: #fff;
+    color: #212529;
+    border: 1px solid #ccc;
+    transition: box-shadow 0.3s;
+    border-radius: 8px; /* Slight rounding */
+}
+
+body.light-theme .form-control:focus {
+    border-color: #9c4dcc; /* Stronger purple on focus */
+    box-shadow: 0 0 0 0.2rem rgba(156, 77, 204, 0.25);
+}
+
+/* === Button Primary === */
+body.light-theme .btn-primary {
+    background-color: #9c4dcc; /* Strong purple */
+    border-color: #9c4dcc;
+    color: white;
+    border-radius: 0.25rem; /* Slightly rounded */
+}
+
+body.light-theme .btn-primary:hover {
+    background-color: #7e57c2; /* Darker purple on hover */
+    border-color: #7e57c2;
+}
+
+body.light-theme .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(156, 77, 204, 0.5);
+}
+
+/* === Social Buttons === */
+body.light-theme .social-btn {
+    border-radius: 0.25rem; /* Square button borders */
+    transition: background-color 0.3s ease;
+    padding: 0.75rem;
+    font-weight: bold;
+}
+
+body.light-theme .social-btn:hover {
+    background-color: #e0d7f0;
+    color: #7e57c2;
+}
+
+/* === Password Toggle Icon === */
+body.light-theme .password-toggle i {
+    color: #9c4dcc;
+}
+
+/* === Divider and Links === */
+body.light-theme .divider,
+body.light-theme a {
+    color: #0D6EFD;
+}
+
+body.light-theme a:hover {
+    /* text-decoration: underline; */
+    color: black; /* Darker purple when hovered */
+}
+
+/* body.light-theme .logo {
+    color: #9c4dcc;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+} */
+
+/* === Sign Up / Login Links === */
+body.light-theme #showSignup,
+body.light-theme #showLogin {
+    color: #9c4dcc;
+    font-weight: bold;
+}
+
+body.light-theme #showSignup:hover,
+body.light-theme #showLogin:hover {
+    color: #7e57c2;
+    text-decoration: underline;
+}
+
+/* === Additional tweaks for spacing and layout === */
+body.light-theme .form-wrapper {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: #7c4dff5e;
+}
+
+/* === Adjustments for the form links text === */
+body.light-theme .forgot-password {
+    color: #9c4dcc;
+}
+
+body.light-theme .forgot-password:hover {
+    color: #7e57c2;
+    text-decoration: underline;
+}
+
+
+/* Logo Styling */
+.logo {
+    font-weight: 700;
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+/* Dashboard Preview Section */
+.dashboard-preview {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #7c4dff, #b388ff, #18ffff);
+    background-size: 400% 400%;
+    animation: gradientShift 20s ease infinite;
+    min-height: 100vh;
+    z-index: 0;
+}
+
+.robot-3d {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.4;
+    animation: moveBlobs 25s ease-in-out infinite alternate;
+}
+
+.blob1 {
+    width: 300px;
+    height: 300px;
+    background: #b388ff;
+    top: 10%;
+    left: 20%;
+}
+
+.blob2 {
+    width: 400px;
+    height: 400px;
+    background: #18ffff;
+    top: 60%;
+    left: 50%;
+}
+
+.blob3 {
+    width: 350px;
+    height: 350px;
+    background: #7c4dff;
+    top: 30%;
+    left: 70%;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes moveBlobs {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(-50px, 50px) scale(1.2); }
+}
+
+
+/* Form Container */
+.form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.form-wrapper {
+    background: rgba(26, 26, 46, 0.6);
+    border-radius: var(--border-radius);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    max-width: 400px;
+}
+
+/* Form Elements */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.05); /* very light transparent bg */
+    color: var(--text-color);
+    border: 1px solid #444;
+    border-radius: 8px;
+}
+
+.form-control::placeholder {
+    color: #aaa;
+}
+
+.form-control:focus {
+    background-color: #1f1f2e;
+    box-shadow: 0 0 10px rgba(124, 77, 255, 0.3);
+    border: 1px solid var(--primary-color);
+    color: var(--text-color);
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #757575;
+}
+
+.forgot-password {
+    color: #757575;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.forgot-password:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: #fff;
+    box-shadow: 0 0 10px rgba(124, 77, 255, 0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 20px rgba(179, 136, 255, 0.5);
+}
+
+/* Divider */
+.divider {
+    position: relative;
+    display: inline-block;
+    color: #757575;
+    font-size: 0.9rem;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 1px;
+    background-color: #444;
+}
+
+.divider::before {
+    right: 100%;
+    margin-right: 15px;
+}
+
+.divider::after {
+    left: 100%;
+    margin-left: 15px;
+}
+
+/* Checkbox, labels, links */
+.form-check-label,
+.forgot-password,
+.divider,
+p {
+    color: var(--text-color);
+}
+
+/* Social buttons */
+.social-btn {
+    background-color: #2a2a2a;
+    color: var(--text-color);
+    border: 1px solid #444;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 8px;
+    padding: 0.75rem;
+}
+
+.social-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+.social-login {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .form-wrapper {
+        padding: 1rem;
+    }
+
+    .social-login {
+        flex-direction: column;
+    }
+}
+body.light-theme {
+    background: none !important;
+    background-color: #ffffff !important;
+    color: #000000 !important;
+}

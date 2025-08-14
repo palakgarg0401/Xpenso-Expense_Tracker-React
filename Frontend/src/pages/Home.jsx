@@ -41,7 +41,7 @@ const Home = () => {
             {/* Login Form */}
             {showLogin ? (
               <div id="loginForm">
-                <h2 className="text-center mb-4">Sign in to Xpenso</h2>
+                <h2 className="text-center mb-4" style={{ color: "white" }}>Sign in to Xpenso</h2>
                 <form>
                   <div className="mb-3">
                     <input type="email" className="form-control" placeholder="Email" required />

@@ -1,6 +1,6 @@
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
-const pool = require("../config/db.js");
+const bcrypt = require("bcrypt"); //for hashing & verifying passwords
+const jwt = require("jsonwebtoken"); //generating JWT token 
+const pool = require("../config/db.js"); //PostgreSQL connection
 
 // Register User
 const register = async (req, res) => {
@@ -55,7 +55,7 @@ const login = async (req, res) => {
       return res.status(400).json({ message: "Invalid credentials" });
     }
 
-    // Generate JWT
+    // Generate JWT {jwt.sign(payload, secret, expires_in)}
     const token = jwt.sign(
       { id: user.rows[0].id, email: user.rows[0].email },
       process.env.JWT_SECRET,

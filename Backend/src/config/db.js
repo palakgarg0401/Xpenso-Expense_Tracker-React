@@ -1,4 +1,4 @@
-const { Pool } = require("pg");
+const { Pool } = require("pg"); //Pool is a set of reusable DB connection
 require("dotenv").config();
 
 const pool = new Pool({
